@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import { returnsData } from "./Panel/returns.js";
-import TradingChart from "../src/Panel/Chart.js";
+import Chart from "../src/Panel/Chart.js";
 import InformationTable from "../src/Panel/InformationTable.js";
 import { BsBorder, BsFillInfoCircleFill } from "react-icons/bs";
 
@@ -43,7 +43,7 @@ const App = () => {
         </div>
 
         <CardContent sx={{ marginTop: "7%" }}>
-          <TradingChart data={returnsData.data.combined} />
+          <Chart data={returnsData.data.combined} />
         </CardContent>
       </Card>
 

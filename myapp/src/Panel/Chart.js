@@ -1,7 +1,7 @@
 import { createChart } from "lightweight-charts";
 import React, { useEffect, useRef, useState } from "react";
 
-const TradingChart = ({ data }) => {
+const Chart = ({ data }) => {
   const chartContainerRef = useRef();
 
   
@@ -83,4 +83,4 @@ const TradingChart = ({ data }) => {
   return <div ref={chartContainerRef}></div>;
 };
 
-export default TradingChart;
+export default Chart;
