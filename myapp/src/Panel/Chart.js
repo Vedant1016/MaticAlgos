@@ -1,10 +1,10 @@
 import { createChart } from "lightweight-charts";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
+import companyLogoFilePath from "../logo_MA.png"; // Correct import statement
 
 const Chart = ({ data }) => {
   const chartContainerRef = useRef();
 
-  
   useEffect(() => {
     if (chartContainerRef.current) {
       const chartOptions = {
@@ -24,14 +24,13 @@ const Chart = ({ data }) => {
         width: 700,
         height: 300,
       };
-      console.log("Data:",data)
+
       const chart = createChart(chartContainerRef.current, chartOptions);
 
       const newSeries = chart.addAreaSeries({
         lineColor: "lightgrey",
         topColor: "white",
       });
-
 
       const periods = [
         { startDate: "2024-01-08", endDate: "2024-01-11" },
@@ -43,36 +42,39 @@ const Chart = ({ data }) => {
       ];
 
       const chartData = data.map((item) => {
-        // Check if time falls within any of the defined periods
         const isInPeriod = periods.some((period) => {
           return item.date >= period.startDate && item.date <= period.endDate;
         });
-      
+
         if (isInPeriod) {
-          return { time: item.date, value: item.cumsum,  lineColor: "#ff0400",  topColor: "#f36361", bottomColor: "rgba(255, 41, 41, 0.052)",
-        };
+          return {
+            time: item.date,
+            value: item.cumsum,
+            lineColor: "#ff0400",
+            topColor: "#f36361",
+            bottomColor: "rgba(255, 41, 41, 0.052)",
+          };
         } else {
-          return { time: item.date, value: item.cumsum , bottomColor: "white"};
+          return { time: item.date, value: item.cumsum, bottomColor: "white" };
         }
       });
 
       newSeries.setData(chartData);
 
+      const logoElement = document.createElement("img");
+      logoElement.src = companyLogoFilePath; // Use the imported file path directly
+      logoElement.alt = "Company Logo";
+      logoElement.style.position = "absolute";
+      logoElement.style.zIndex = "999"; // Decreased zIndex
 
-      const watermark = document.createElement("div");
-      watermark.style.position = "absolute";
-      watermark.style.zIndex = "1";
-      watermark.style.top = "80%";
-      watermark.style.left = "100%";
-      watermark.style.transform = "translate(-50%, -50%)";
-      watermark.style.width = "200px";
-      watermark.style.height = "100px";
-      watermark.style.backgroundImage = `url("/logo_white.png")`;
-      watermark.style.backgroundRepeat = "no-repeat";
-      watermark.style.backgroundSize = "contain";
-      watermark.style.opacity = "0.3";
-      chartContainerRef.current.style.position = "relative";
-      chartContainerRef.current.appendChild(watermark);
+      logoElement.style.zIndex = "2";
+      logoElement.style.top = "42%";
+      logoElement.style.left = "40%";
+      logoElement.style.width = "100px";
+      logoElement.style.height = "50px";
+      logoElement.style.opacity = "0.7"; // Adjust opacity as needed (0.7 means 70% opacity)
+
+      chartContainerRef.current.appendChild(logoElement);
 
       return () => {
         chart.remove();

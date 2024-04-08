@@ -5,7 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import { returnsData } from "./Panel/returns.js";
 import Chart from "../src/Panel/Chart.js";
 import InformationTable from "../src/Panel/InformationTable.js";
-import { BsBorder, BsFillInfoCircleFill } from "react-icons/bs";
+import { BsBorder, BsInfoCircle } from "react-icons/bs";
 
 const App = () => {
   return (
@@ -38,7 +38,7 @@ const App = () => {
               cursor: "pointer",
             }}
           >
-            <BsFillInfoCircleFill />
+            <BsInfoCircle />
           </button>
         </div>
 
