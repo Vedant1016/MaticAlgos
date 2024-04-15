@@ -10,7 +10,7 @@ import { ddPeriods } from "./ddperiod";
 
 const InformationTable = () => {
   return (
-    <div style={{ maxHeight: "auto", overflowY: "auto", borderLeft: "1px solid #ddd", borderRight: "1px solid #ddd" }}>
+    <div style={{ maxHeight: "auto", overflowY: "auto", borderLeft: "1px solid #ddd", borderRight: "1px solid #ddd", width: "600px" }}>
       <TableContainer component={Paper} style={{ borderBottom: "1px solid #ddd" }}>
         <Table style={{ borderRadius: "4px" }}>
           <TableHead style={{ backgroundColor: "lightgrey" }}>

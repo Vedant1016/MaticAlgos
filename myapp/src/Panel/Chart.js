@@ -33,12 +33,12 @@ const Chart = ({ data }) => {
       });
 
       const periods = [
-        { startDate: "2024-01-08", endDate: "2024-01-11" },
-        { startDate: "2024-01-11", endDate: "2024-01-16" },
-        { startDate: "2024-01-31", endDate: "2024-02-08" },
-        { startDate: "2024-02-14", endDate: "2024-02-16" },
-        { startDate: "2024-02-21", endDate: "2024-02-28" },
         { startDate: "2024-02-28", endDate: "2024-03-14" },
+        { startDate: "2024-01-31", endDate: "2024-02-07" },
+        { startDate: "2024-02-21", endDate: "2024-02-28" },
+        { startDate: "2024-01-11", endDate: "2024-01-16" },
+        { startDate: "2024-01-08", endDate: "2024-01-11" },
+        { startDate: "2024-02-14", endDate: "2024-02-15" },
       ];
 
       const chartData = data.map((item) => {
@@ -62,16 +62,15 @@ const Chart = ({ data }) => {
       newSeries.setData(chartData);
 
       const logoElement = document.createElement("img");
-      logoElement.src = companyLogoFilePath; // Use the imported file path directly
+      logoElement.src = companyLogoFilePath;
       logoElement.alt = "Company Logo";
       logoElement.style.position = "absolute";
-
       logoElement.style.zIndex = "1";
-      logoElement.style.top = "42%";
-      logoElement.style.left = "40%";
+      logoElement.style.top = "66%";
+      logoElement.style.left = "83%";
       logoElement.style.width = "100px";
       logoElement.style.height = "50px";
-      logoElement.style.opacity = "0.7"; // Adjust opacity as needed (0.7 means 70% opacity)
+      logoElement.style.opacity = "0.7";
 
       chartContainerRef.current.appendChild(logoElement);
 
@@ -81,7 +80,7 @@ const Chart = ({ data }) => {
     }
   }, [data]);
 
-  return <div ref={chartContainerRef}></div>;
+  return <div ref={chartContainerRef} style={{ position: "relative" }}></div>;
 };
 
 export default Chart;
