@@ -34,7 +34,7 @@ const Chart = ({ data }) => {
 
       const periods = [
         { startDate: "2024-01-08", endDate: "2024-01-11" },
-        { startDate: "2024-01-11", endDate: "2024-01-17" },
+        { startDate: "2024-01-11", endDate: "2024-01-16" },
         { startDate: "2024-01-31", endDate: "2024-02-08" },
         { startDate: "2024-02-14", endDate: "2024-02-16" },
         { startDate: "2024-02-21", endDate: "2024-02-28" },
