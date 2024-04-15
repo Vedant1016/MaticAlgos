@@ -65,9 +65,8 @@ const Chart = ({ data }) => {
       logoElement.src = companyLogoFilePath; // Use the imported file path directly
       logoElement.alt = "Company Logo";
       logoElement.style.position = "absolute";
-      logoElement.style.zIndex = "999"; // Decreased zIndex
 
-      logoElement.style.zIndex = "2";
+      logoElement.style.zIndex = "-2";
       logoElement.style.top = "42%";
       logoElement.style.left = "40%";
       logoElement.style.width = "100px";

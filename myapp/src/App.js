@@ -28,7 +28,7 @@ const App = () => {
             borderRadius:'5px'
           }}
         >
-          <b>Drawdown Periods</b>
+          <b >Drawdown Periods</b>
           <button
             style={{
               marginTop: "1%",
