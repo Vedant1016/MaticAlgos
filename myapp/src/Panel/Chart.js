@@ -66,7 +66,7 @@ const Chart = ({ data }) => {
       logoElement.alt = "Company Logo";
       logoElement.style.position = "absolute";
 
-      logoElement.style.zIndex = "-2";
+      logoElement.style.zIndex = "1";
       logoElement.style.top = "42%";
       logoElement.style.left = "40%";
       logoElement.style.width = "100px";
